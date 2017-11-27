@@ -44,7 +44,7 @@ day_2_meeting = {
 plans = {
 'name':'plans',
 'desc': 'Lion moves the light over the map of the Island. He puts a pin into Pilgrim State Psych centere, one in Katies of Smithtown, one in Kings Park Psych Centere, one on Sweethallow Rd, and one at the Amityville Horror house. Together, they form two opposing triangles. You mission is to investigate these sites and debunk two paranormal portals.',
-'actions': {'laugh': 'laugh', 'take Pilgrim': 'plans_2'},
+'actions': {'laugh': 'laugh', 'take pilgrim': 'plans_2'},
 'exit':False
 }
 
@@ -95,21 +95,28 @@ depart = {
 home = {
 'name':'home',
 'desc': 'You arrive at home, rush to a calender and mark Friday night on it. It is Sunday, you have one week.',
-'actions': {'read Pilgrim': 'pilgrim_plan', 'read Sweethallow': 'sweethallow_plan'},
+'actions': {'read pilgrim': 'pilgrim_plan', 'read sweethallow': 'sweethallow_plan'},
 'exit':False
 }
 
 pilgrim_plan = {
 'name':'pilgrim_plan',
 'desc': 'You open the Pilgrim State Dossier and begin to read. The mental hospital had shutdown most of its facilities years ago. There are reports that range from missing blood to the dumping of bodies. There is still an active building there and the area is patrolled by the State Troopers 24/7. Enterance will be difficult. Rumon has it that local gangs use the abonden buildings as club houses and the homeless as a shelter.',
-'actions': {'read Pilgrim': 'pilgrim_plan', 'read Sweethallow': 'sweethallow_plan'},
+'actions': {'begin': 'pilgrim_2', 'sleep': 'sleep_2'},
+'exit':False
+}
+
+pilgrim_2 = {
+'name':'pilgrim_2',
+'desc': 'You have no contacts',
+'actions': {'read pilgrim': 'pilgrim_plan', 'read sweethallow': 'sweethallow_plan'},
 'exit':False
 }
 
 sweethallow_plan = {
 'name':'sweethallow_plan',
 'desc': 'Dev Note-2',
-'actions': {'read Pilgrim': 'pilgrim_plan', 'read Sweethallow': 'sweethallow_plan', 'exit-loop': 'sleep',},
+'actions': {'read Pilgrim': 'pilgrim_plan', 'read sweethallow': 'sweethallow_plan', 'exit-loop': 'sleep',},
 'exit':False
 }
 
